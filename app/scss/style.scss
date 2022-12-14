@@ -169,43 +169,79 @@
 
 .artist {
     overflow-x: hidden;
+
     &__title {
-        padding: 113px 0 127px;
+
         font-size: 79px;
         line-height: 88px;
         text-transform: uppercase;
         @extend %title-font;
-        animation: text 5s infinite linear;
-        // padding-left: 100%;
-        // white-space: nowrap;
-    }
-    @keyframes text {
-        0%{
-          transform: translate(0, 0);
-        }
-        
-        100%{
-          transform: translate(-360%, 0);
-        }
-      }
-    &__title-box {
-        display: flex;
-        justify-content: space-between; 
-    }
-}
+        margin: 0px -40px;
 
-// .block{
-//     height: 90px;
-//     width:300px;
-//     margin:0 auto;
-//     background: #343436;
-//   }
-//   .block p{
-//     text-align:center;
-//     color:#fff;
-//     text-transform: uppercase;
-//     padding-top: 35px;
-    
-  
-//   }
-  
+
+    }
+
+
+
+    &__title-box {
+        padding: 113px 0 127px;
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+        width: 100%;
+        overflow: hidden;
+        white-space: nowrap;
+
+        span {
+            display: inline-block;
+            width: 100%;
+            text-indent: 0;
+            animation: marquee 6s linear infinite;
+        }
+
+    }
+
+    @keyframes marquee {
+        0% {
+            transform: translate(100%, 0);
+        }
+
+        100% {
+            transform: translate(-77%, 0);
+        }
+    }
+
+    @media only screen and (max-width: 440px) {
+        .marquee span {
+            animation: none;
+            padding-left: 0
+        }
+    }
+    &__content-box {
+        padding-bottom: 120px;
+    }
+
+    &__list {
+        display: grid;
+
+        grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+        gap: 40px;
+    }
+   
+    &__list-img {
+        margin: 0 auto 20px;
+        
+    }
+
+    &__name {
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        @extend %dm-font;
+    }
+
+}
+.artist__content-box.container-inner {
+    margin: 0;
+    padding-left: 18px;
+}
