@@ -1,0 +1,56 @@
+@import 'vars';
+@import 'fonts';
+@import 'reset';
+@import 'libs';
+@import 'global';
+
+
+.header {
+    &__inner {
+        display: flex;
+        padding: 50px 0 10px;
+        
+    }
+
+    &__logo {
+        margin-right: 40px;
+    }
+
+    &__info-box {
+        display: flex;
+        justify-content: space-between;
+        flex-basis: 100%;
+    }
+
+    &__social-list,
+    &__menu-list {
+        display: flex;
+    }
+    &__menu-item {      
+        & + .header__menu-item {
+            margin-left: 40px;
+        }
+    }
+    &__menu-link {
+        font-size: 16px;
+        line-height: 16px;
+        @extend %dm-font;
+    }
+
+    &__social-item {      
+        & + .header__social-item {
+            margin-left: 12px;
+        }
+    }
+   
+    &__social-link{
+        width: 36px;
+        height: 36px;
+        display: flex;
+        justify-content: center;    
+        align-items: center;
+        background-color: #fff;
+       
+    }
+   
+}

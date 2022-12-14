@@ -1,0 +1,44 @@
+html,
+body {
+	height: 100%;
+}
+body {
+	font-size: 16px;
+	line-height: 26px;
+	font-weight: 400;
+	font-family: 'Inter', sans-serif;
+	color: #fff;
+	min-width: 320px;
+}
+
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+
+.main {
+	flex: 1 0 auto;
+}
+.footer {
+	flex: 0 0 auto;
+}
+
+.container-fluid{
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 15px;
+  background-color: #000;
+}
+.container-inner{
+	max-width: 1160px;
+	margin: 0 auto;
+	
+
+}
+
+
+
+
+
