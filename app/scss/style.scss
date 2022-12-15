@@ -94,6 +94,11 @@
         text-align: center;
         text-transform: capitalize;
         @extend %dm-font;
+        transition: all .4s ease-in-out;
+
+        &:hover {
+            color: #fff;
+        }
     }
 }
 
@@ -124,27 +129,12 @@
     }
 
     &__describe-title {
-        color: $accent;
-        padding-left: 22px;
-        margin-bottom: 27px;
-        font-size: 21px;
-        line-height: 32px;
-        @extend %dm-font;
-        position: relative;
-
         &::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            width: 2px;
             height: 124px;
-            background-color: $accent;
         }
     }
 
-    &__describe-text {
-        margin-bottom: 18px;
-    }
+
 
     &__describe-text:nth-child(4) {
         margin-bottom: 36px;
@@ -159,6 +149,11 @@
         text-transform: capitalize;
         @extend %dm-font;
         border: 1px solid $accent;
+        transition: all .4s ease-in-out;
+
+        &:hover {
+            color: $accent;
+        }
     }
 
     &__img {
@@ -217,6 +212,7 @@
             padding-left: 0
         }
     }
+
     &__content-box {
         padding-bottom: 120px;
     }
@@ -227,10 +223,10 @@
         grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
         gap: 40px;
     }
-   
+
     &__list-img {
         margin: 0 auto 20px;
-        
+
     }
 
     &__name {
@@ -241,7 +237,251 @@
     }
 
 }
+
 .artist__content-box.container-inner {
     margin: 0;
     padding-left: 18px;
+}
+
+
+.story {
+    &__inner {
+        background-color: #000;
+        padding-top: 120px;
+        padding-bottom: 120px;
+    }
+
+    &__title {
+        padding-bottom: 60px;
+        background-color: #222;
+        font-size: 37px;
+        line-height: 45px;
+        text-align: center;
+        text-transform: uppercase;
+        @extend %title-font;
+
+        span {
+            color: #A8A8A8;
+        }
+    }
+
+    &__describe-title {
+        &::before {
+            height: 93px;
+        }
+    }
+
+    &__content-box {
+        display: flex;
+    }
+
+    &__content-image {
+        max-width: 172px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &__describe-box {
+        margin-left: 40px;
+    }
+
+}
+
+
+
+.tabs {
+
+    float: none;
+    list-style: none;
+    position: relative;
+    text-align: left;
+    min-height: 520px;
+
+
+
+    input[type="radio"] {
+        position: absolute;
+        top: 0;
+        left: -999px;
+    }
+
+    label {
+        max-width: 282px;
+        width: 100%;
+        display: block;
+        padding: 14px 21px;
+        border-radius: 2px 2px 0 0;
+        font-size: 16px;
+        line-height: 26px;
+        font-weight: normal;
+        text-transform: capitalize;
+        background: #222;
+        cursor: pointer;
+        top: 4px;
+        transition: all 0.2s ease-in-out;
+        @extend %dm-font;
+
+        &:hover {
+            color: $accent;
+        }
+    }
+
+    .tab-content {
+        z-index: 2;
+        display: none;
+        overflow: hidden;
+        font-size: 17px;
+        line-height: 25px;
+        padding: 25px;
+        position: absolute;
+        top: 0px;
+        left: 280px;
+        background: #222;
+    }
+
+    //The Magic
+    [id^="tab"]:checked+label {
+        top: 0;
+        border-bottom: 1px solid $accent;
+        color: $accent;
+
+    }
+
+    [id^="tab"]:checked~[id^="tab-content"] {
+        display: block;
+    }
+}
+
+
+.decor-box {
+
+    padding-bottom: 120px;
+}
+
+
+
+.roadmap {
+    &__inner {
+        padding-bottom: 140px;
+        position: relative;
+    }
+
+    &__title {
+        padding-bottom: 104px;
+        font-size: 38px;
+        line-height: 45px;
+        @extend %title-font;
+        text-align: center;
+        text-transform: uppercase;
+
+    }
+
+    &__item {
+        max-width: 550px;
+        width: 100%;
+        margin: 0 auto;
+        background-color: #222;
+        border: 1px solid $accent;
+        position: relative;
+        margin-bottom: 140px;
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 40px;
+            background-color: $accent;
+            right: 50%;
+            bottom: -85px;
+        }
+    }
+    &__item:last-child::after {
+        width: 0;
+    }
+
+    &__item-head {
+        border-bottom: 1px solid $accent;
+        display: flex;
+        flex-basis: 100%;
+        padding: 12px;
+
+    }
+
+    &__item-number {
+        font-size: 28px;
+        line-height: 28px;
+        border: 1px solid $accent;
+        width: 45px;
+        height: 45px;
+        color: $accent;
+        text-align: center;
+        padding: 8px;
+        align-self: center;
+      
+    }
+    &__item-complete {
+        background-color: $accent;
+        color: #222;
+    }
+
+    &__item-info {
+        margin-left: 12px;
+        font-size: 16px;
+        line-height: 28px;
+        padding-top: 6px;
+        @extend %dm-font;
+        text-transform: uppercase;
+
+        span {
+            display: block;
+            font-size: 8px;
+            line-height: 12px;
+            letter-spacing: 1px;
+            color: $accent;
+        }
+    }
+
+    &__item-content {
+        display: flex;
+        padding: 30px 12px;
+    }
+
+    &__content-info {
+        max-width: 310px;
+        width: 100%;
+        margin-right: 74px;
+    }
+
+    &__content-list {
+        margin-left: 22px;
+        line-height: 32px;
+        margin-bottom: 16px;
+        font-size: 11px;
+    }
+
+    &__content-text {
+        font-size: 11px;
+        line-height: 26px;
+        margin-top: 15px;
+    }
+    &__image-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__decor-item {
+        position: absolute;
+    }
+    &__decor-itemone {
+        top: -230px;
+        left: -130px;
+    }
+    &__decor-itemtwo {
+        right: -85px;
+        top: 250px;
+    }
+    &__decor-itemtree {
+        bottom: 0;
+        left: -100px;
+    }
 }

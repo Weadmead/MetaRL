@@ -40,6 +40,32 @@ body {
 }
 
 
+.describe-title {
+	color: $accent;
+	padding-left: 22px;
+	margin-bottom: 27px;
+	font-size: 21px;
+	line-height: 32px;
+	@extend %dm-font;
+	position: relative;
+
+	&::before {
+		content: "";
+		position: absolute;
+		left: 0;
+		width: 2px;
+		
+		background-color: $accent;
+	}
+}
+
+.describe-text {
+	margin-bottom: 18px;
+}
 
 
 
+
+.container-fluid.container-decor {
+	padding: 0;
+}
